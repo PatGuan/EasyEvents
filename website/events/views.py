@@ -35,7 +35,10 @@ def register_user(request):
 def search(request):
 	# search_results = User.objects.all().filter(username=request.POST.get['search_input'])
 	try:
-		search_results = User.objects.get(username=request.POST.get('searchinput'))
+		search_results = User.objects.all().filter(username__startswith=
+			# username=request.POST.get('searchinput')
+			request.POST.get('searchinput')
+			)
 	except (KeyError, User.DoesNotExist):
 		results = User.objects.all()
 		return render(request, 'events/main.html', {'results': "No user by that name"})
