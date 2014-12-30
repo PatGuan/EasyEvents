@@ -1,4 +1,22 @@
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'events/mainstyle.css' %}"/>
 
-<h1>{{ user.username }}</h1>
+<div class="center" id="centertitle">
+	<h1>Welcome to your dashboard, {{ user.username }}</h1>
+</div>
+
+<div id="dashboard">
+	<div id="navbar">
+<!-- 		<input id="searchinput" type="text" maxlength="20">
+		<div id="searchbutton">Search</div> -->
+		<form action="/events/search/" method="post">
+			{% csrf_token %}
+			<input id="searchinput" type="text" maxlength="20" name="searchinput">
+			<input id="searchbutton" type="submit" value="Search">
+		</form>
+	</div>
+
+	<div id="searchresults">
+		{{ results }}
+	</div>
+</div>
