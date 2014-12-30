@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'events/style.css' %}"/>
+
+<body>
+
+
+<div class="center" id="divtitle">
+	<span id="title">Events made easier.</span>
+</div>
+
+<div class="center">
+	<p id="notfound"> {{ loginfail }} </p>
+</div>
+
+<div class="center" id="loginbox">
+	<form action="/events/login/" method="post">
+		{% csrf_token %}
+		<input id="username" class="inputbox" type="text" name="username" maxlength="20"><br>
+		<input id="password" class="inputbox" type="password" name="password" maxlength="20"><br>
+		<input class="authenticate" id="submit" type="submit" value="Login">
+<!-- 		<input class="authenticate" id="register" type="submit" value="Register"> -->
+	</form>
+	<p id="noaccount"> Don't have an account? Register here! </p>
+	<a href="{% url 'events:register' %}"><button class="authenticate" id="register">Register</button></a>
+</div>
+
+</body>

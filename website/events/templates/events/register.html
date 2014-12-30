@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'events/registerstyle.css' %}"/>
+
+<h1> You'll love it here. </h1>
+<div class="center">
+	<form action="/events/register_user/" method="post">
+			{% csrf_token %}
+			<h4>Username</h4>
+			<input id="username" class="inputbox" type="text" name="username" maxlength="20"><br>
+			<h4>Password</h4>
+			<input id="password" class="inputbox" type="password" name="password" maxlength="20"><br>
+			<input id="submit" type="submit" value="Register">
+	</form>
+</div>
+
+<p> {{ loginfail }} </p>

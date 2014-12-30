@@ -1,0 +1,37 @@
+body {
+	background-color: #343b6f;
+}
+
+p, h1, h2, h3, h4 {
+	color: white;
+	text-align: center;
+}
+.center {
+	background-color: transparent;
+	width: 30%;
+	margin-right: auto;
+	margin-left: auto;
+}
+.inputbox {
+	width: 70%;
+	height: 40px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#submit {
+	color: white;
+	font-size: 17px;
+	height: 40px;
+	width: 100px;
+	margin-top: 7%;
+	margin-left: 5%;
+	border-radius: 5px;
+	background-color: #434d98;
+	border-style: none;
+}
+#submit:hover {
+	background-color: white;
+	color: #434d98;
+	border: 1px solid #434d98;
+	cursor: pointer;
+}
