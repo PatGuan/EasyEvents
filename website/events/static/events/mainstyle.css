@@ -50,6 +50,7 @@ p, h1 {
 	height: 25px;
 	border: 1px solid white;
 	border-radius: 5px;
+	cursor: pointer;
 }
 
 a {

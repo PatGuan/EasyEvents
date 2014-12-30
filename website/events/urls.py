@@ -8,4 +8,5 @@ urlpatterns = patterns('',
 	url(r'^register_user/', views.register_user, name='register_user'),
 	url(r'^search/', views.search, name='search'),
 	url(r'^create/', eventview.create, name='create'),
+	url(r'^create_event/', eventview.create_event, name='create_event'),
 	)
