@@ -17,12 +17,11 @@ p, h1 {
 }
 
 
-/* NAVBAR */
-#navbar {
+/* SEARCHBAR */
+#searchbar {
 	margin-top: 3%;
-	margin-right: auto;
-	margin-left: auto;
-	width: 90%;
+	margin-left: 65%;
+	width: 30%;
 	padding-left: 1%;
 	padding-right: 1%;
 	padding-top: 1%;
@@ -30,13 +29,32 @@ p, h1 {
 	border: 2px solid #262e6d;
 	border-radius: 5px;
 }
-#searchbutton {
-	display: inline-block;
+
+/* NAVBAR */
+#navbar {
+	margin-top: -5%;
+	width: 60%;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border: 2px solid #262e6d;
+	border-radius: 5px;
+}
+
+.navbuttons {
 	text-align: center;
-	width: 7%;
+	width: 30%;
 	color: white;
 	background-color: #262e6d;
 	height: 25px;
 	border: 1px solid white;
-	border-radius: 5px; 
+	border-radius: 5px;
+}
+
+a {
+	text-decoration: none;
+}
+a:link, a:visited {
+	color: white;
 }

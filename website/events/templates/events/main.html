@@ -6,17 +6,25 @@
 </div>
 
 <div id="dashboard">
-	<div id="navbar">
-<!-- 		<input id="searchinput" type="text" maxlength="20">
-		<div id="searchbutton">Search</div> -->
-		<form action="/events/search/" method="post">
-			{% csrf_token %}
-			<input id="searchinput" type="text" maxlength="20" name="searchinput">
-			<input id="searchbutton" type="submit" value="Search">
-		</form>
+	<div id="searchbar" class="headerbars">
+
+		<div id="search" class="center">
+			<form action="/events/search/" method="post">
+				{% csrf_token %}
+				<input id="searchinput" type="text" maxlength="20" name="searchinput">
+				<input id="searchbutton" type="submit" value="Search" class="navbuttons">
+			</form>
+		</div>
 	</div>
 
-	<div id="searchresults">
+	<div id="navbar" class="headerbars">
+		<button id="create" class="navbuttons"><a href="/events/create/">Create an Event</a></button>
+		<button id="upcoming" class="navbuttons">Upcoming Events</button>
+
+	</div>
+
+	<div>
 		{{ results }}
 	</div>
+
 </div>
