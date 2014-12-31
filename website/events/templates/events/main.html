@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'events/mainstyle.css' %}"/>
 
 <div class="center" id="centertitle">
-	<h1>Welcome to your dashboard, {{ user.username }}</h1>
+	<h1>Welcome to your dashboard, {{ request.session.username }}</h1>
 </div>
 
 <div id="dashboard">
@@ -19,7 +19,9 @@
 
 	<div id="navbar" class="headerbars">
 		<a href="/events/create/"><button id="create" class="navbuttons">Create an Event</button></a>
-		<button id="upcoming" class="navbuttons">Upcoming Events</button>
+		<a href=""><button id="upcoming" class="navbuttons">Upcoming Events</button></a>
+		<a href=""><button id="groups" class="navbuttons">My groups</button></a>
+
 
 	</div>
 

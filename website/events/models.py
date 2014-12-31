@@ -15,7 +15,7 @@ class Event(models.Model):
 	publish_date = timezone.now()
 
 	def __str__(self):
-		return event_title
+		return self.event_title
 
 class Comment(models.Model):
 	publisher = models.ForeignKey(User)
@@ -24,4 +24,4 @@ class Comment(models.Model):
 	comment_text = models.CharField(max_length=100)
 
 	def __str__(self):
-		return comment_text
+		return self.comment_text

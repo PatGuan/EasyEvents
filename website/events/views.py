@@ -30,7 +30,7 @@ def register_user(request):
 		user = User(username=request.POST['username'], password=request.POST['password'])
 		user.save()
 		request.session['username'] = user.username
-		return render(request, 'events/main.html', {'user':user})
+		return render(request, 'events/main.html')
 	else:
 		return render(request, 'events/register.html', {'loginfail':"Username already taken. Please choose another"})
 
