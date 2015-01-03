@@ -44,7 +44,7 @@ p, h1 {
 
 .navbuttons {
 	text-align: center;
-	width: 30%;
+	width: 23%;
 	color: white;
 	background-color: #262e6d;
 	height: 25px;
@@ -58,4 +58,39 @@ a {
 }
 a:link, a:visited {
 	color: white;
+}
+
+/* SEARCHRESULTS */
+#searchresults {
+	margin-top: 1%;
+	margin-left: 65%;
+	width: 30%;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border: 2px solid #262e6d;
+	border-radius: 5px;
+}
+.userblock {
+	text-align: center;
+/*	margin-right: auto;
+	margin-left: auto;*/
+	width: 90%;
+	margin-top: 1%;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border: 2px solid #262e6d;
+	border-radius: 5px;	
+}
+.user {
+	margin-top: 2%;
+	font-size: 16px;
+	font-family: Arial;
+	margin-bottom: 2%;
+}
+#addfriend {
+	width: 30%;
 }

@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
-from events.models import User, Comment, Event
+from events.models import User, Comment, Event, Friends
 
 
 # Create your views here.
@@ -35,14 +35,25 @@ def register_user(request):
 		return render(request, 'events/register.html', {'loginfail':"Username already taken. Please choose another"})
 
 def search(request):
-	# search_results = User.objects.all().filter(username=request.POST.get['search_input'])
-	try:
-		search_results = User.objects.all().filter(username__startswith=
-			# username=request.POST.get('searchinput')
-			request.POST.get('searchinput')
-			)
-	except (KeyError, User.DoesNotExist):
-		results = User.objects.all()
+	search_results = User.objects.all().filter(username__startswith=
+				request.POST.get('searchinput')
+				)
+	if not search_results:
 		return render(request, 'events/main.html', {'results': "No user by that name"})
 	else:
 		return render(request, 'events/main.html', {'results':search_results})
+
+def addFriend(request, requested_friend):
+	currentUser = User.objects.get(username=request.session['username'])
+
+	try:
+	 	list_of_friends = Friends.objects.get(username=currentUser)
+	except (KeyError, Friends.DoesNotExist):
+		#User has no friends
+		new_friends = Friends(username=currentUser, friends="")
+		new_friends.saveFriends(list_of_friends=[requested_friend])
+		new_friends.save()
+		return render(request, 'events/main.html', {'friends':requested_friend + " added"})
+	else:
+		list_of_friends.append(requested_friend).save()
+		return render(request, 'events/main.html', {'friends':requested_friend + " added"})

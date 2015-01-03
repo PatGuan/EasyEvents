@@ -1,9 +1,10 @@
 from django.db import models
 from django.utils import timezone
+import json
 
 # Create your models here.
 class User(models.Model):
-	username = models.CharField(max_length=15)
+	username = models.CharField(max_length=15, primary_key=True)
 	password = models.CharField(max_length=15)
 
 	def __str__(self):
@@ -25,3 +26,13 @@ class Comment(models.Model):
 
 	def __str__(self):
 		return self.comment_text
+
+class Friends(models.Model):
+	username = models.ForeignKey(User)
+	friends = models.CharField(max_length=15)
+
+	def saveFriends(self, list_of_friends):
+		self.friends = json.dumps(list_of_friends)
+
+	def loadFriends(self):
+		return json.loads(self.friends)

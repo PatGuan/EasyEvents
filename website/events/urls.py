@@ -9,4 +9,5 @@ urlpatterns = patterns('',
 	url(r'^search/', views.search, name='search'),
 	url(r'^create/', eventview.create, name='create'),
 	url(r'^create_event/', eventview.create_event, name='create_event'),
+	url(r'^addFriend/(?P<requested_friend>\w+)/$', views.addFriend, name='addFriend'),
 	)
