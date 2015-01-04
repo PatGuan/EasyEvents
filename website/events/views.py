@@ -43,26 +43,3 @@ def search(request):
 		return render(request, 'events/main.html', {'results': "No user by that name"})
 	else:
 		return render(request, 'events/main.html', {'results':search_results})
-
-def addFriend(request, requested_friend):
-	currentUser = User.objects.get(username=request.session['username'])
-
-	try:
-	 	model_user_to_friend = Friends.objects.get(username=currentUser)
-	 	list_of_friends = decodeList(model_user_to_friend.friends)
-	except (KeyError, Friends.DoesNotExist):
-		#User has no friends, create a new list of friends
-		new_friends = Friends(username=currentUser)
-		list_of_friends = [requested_friend]
-		new_friends.friends = json.dumps(list_of_friends)
-		new_friends.save()
-		return render(request, 'events/main.html', {'friends':requested_friend + " added"})
-	else:
-		list_of_friends.append(requested_friend)
-		model_user_to_friend.friends = json.dumps(list_of_friends)
-		model_user_to_friend.save()
-		return render(request, 'events/main.html', {'friends':requested_friend + " added"})
-
-def decodeList(list_of_something):
-	jsonDec = json.decoder.JSONDecoder()
-	return jsonDec.decode(list_of_something)

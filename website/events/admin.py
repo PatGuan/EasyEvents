@@ -5,3 +5,4 @@ from events.models import *
 admin.site.register(User)
 admin.site.register(Event)
 admin.site.register(Comment)
+admin.site.register(Friends)
