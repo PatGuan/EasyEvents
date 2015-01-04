@@ -11,4 +11,5 @@ urlpatterns = patterns('',
 	url(r'^create_event/', eventview.create_event, name='create_event'),
 	url(r'^addFriend/(?P<requested_friend>\w+)/$', friend.addFriend, name='addFriend'),
 	url(r'^viewfriends/', friend.view_friends, name="viewfriends"),
+	url(r'^removeFriend/(?P<friend>\w+)/$', friend.remove_friend, name='removeFriend'),
 	)
