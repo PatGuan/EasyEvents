@@ -1,10 +1,10 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from events.models import User, Comment, Event, Friends
 import json, re
 
 def addFriend(request, requested_friend):
+
 	currentUser = User.objects.get(username=request.session['username'])
 
 	try:
@@ -13,8 +13,7 @@ def addFriend(request, requested_friend):
 	except (KeyError, Friends.DoesNotExist):
 		#User has no friends, create a new list of friends
 		new_friends = Friends(username=currentUser)
-		list_of_friends = [requested_friend]
-		new_friends.friends = json.dumps(list_of_friends)
+		new_friends.friends = json.dumps([requested_friend])
 		new_friends.save()
 		return render(request, 'events/main.html', {'friends':requested_friend + " added"})
 	else:
@@ -28,18 +27,24 @@ def addFriend(request, requested_friend):
 			model_user_to_friend.save()
 			return render(request, 'events/main.html', {'friends':requested_friend + " added"})
 
+
+#Decode from JSON to a python list
 def decodeList(list_of_something):
 	jsonDec = json.decoder.JSONDecoder()
 	return jsonDec.decode(list_of_something)
 
+
+#Function to render the friends page
 def view_friends(request):
 	try:
 		my_friends = Friends.objects.get(username=request.session['username'])
 	except (KeyError, Friends.DoesNotExist):
-		return render(request, 'events/friends.html', {'friends':'Sorry but you have no friends'})
+		return render(request, 'events/friends.html', {'friends':'Sorry but you currently have no friends'})
 	else:
 		return render(request, 'events/friends.html', {'friends':parseFriends(my_friends.friends)})
 
+
+#Function to parse list of python characters into a list of names
 def parseFriends(friends_list):
 	parsed_list = []
 	name = ""
@@ -57,7 +62,9 @@ def parseFriends(friends_list):
 	parsed_list.append(name)
 	return parsed_list
 
+
 def remove_friend(request, friend):
+
 	currentUser = User.objects.get(username=request.session['username'])
 
 	try:
