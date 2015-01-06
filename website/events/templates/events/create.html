@@ -1,0 +1,9 @@
+<h1> Create your event here </h1>
+
+<form action="/events/create_event/" method="post">
+	{% csrf_token %}
+	<input type="text" maxlength="20" name="event_title">
+	<input type="submit" value="Create Event">
+</form>
+
+<p> {{ event_results }} </p>

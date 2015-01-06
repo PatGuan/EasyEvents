@@ -1,0 +1,14 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'events/friendstyle.css' %}"/>
+
+<h1> Your friends </h1>
+
+<div id="friendsdisplay">
+	{% for friend in friends %}
+		<div class="friend">
+			<span class="user">{{ friend }}</span><br>
+			<a href="/events/removeFriend/{{friend}}"><button>Remove Friend</button></a>
+		</div>
+	{% endfor %}
+</div>

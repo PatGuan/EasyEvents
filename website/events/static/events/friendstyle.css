@@ -1,0 +1,46 @@
+h1 {
+	text-align: center;
+	color: #262e6d;
+}
+button {
+	text-align: center;
+	width: 50%;
+	color: white;
+	background-color: #262e6d;
+	height: 25px;
+	border: 1px solid white;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#friendsdisplay {
+	margin-right: auto;
+	margin-left: auto;
+	width: 50%;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border: 2px solid #262e6d;
+	border-radius: 5px;
+}
+.friend {
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 1%;
+	width: 50%;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border: 2px solid #262e6d;
+	border-radius: 5px;	
+}
+.user {
+	margin-top: 2%;
+	font-size: 16px;
+	font-family: Arial;
+	margin-bottom: 2%;
+	color: #262e6d;
+}
