@@ -4,6 +4,7 @@
 
 <div class="center" id="centertitle">
 	<h1>Welcome to your dashboard, {{ request.session.username }}</h1>
+	<a href="/events/logout/"><button id="logout" class="navbuttons">Logout</button></a>
 </div>
 
 <div id="dashboard">
@@ -21,7 +22,7 @@
 	<div id="navbar" class="headerbars">
 		<a href="/events/create/"><button id="create" class="navbuttons">Create an Event</button></a>
 		<a href=""><button id="upcoming" class="navbuttons">Upcoming Events</button></a>
-		<a href=""><button id="groups" class="navbuttons">My groups</button></a>
+		<a href="/events/groups/"><button id="groups" class="navbuttons">My groups</button></a>
 		<a href="/events/viewfriends/"><button id="friends" class="navbuttons">My friends</button></a>
 	</div>
 

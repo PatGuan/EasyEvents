@@ -20,7 +20,6 @@ class Event(models.Model):
 
 class Comment(models.Model):
 	publisher = models.ForeignKey(User)
-	#publish_date = models.DateTimeField('date published')
 	publish_date = timezone.now()
 	comment_text = models.CharField(max_length=100)
 
@@ -31,8 +30,6 @@ class Friends(models.Model):
 	username = models.ForeignKey(User)
 	friends = models.CharField(max_length=15)
 
-	def saveFriends(self, list_of_friends):
-		self.friends = json.dumps(list_of_friends)
-
-	def loadFriends(self):
-		return json.loads(self.friends)
+class Group(models.Model):
+	group_name = models.CharField(max_length=30)
+	group_members = models.CharField(max_length=20)

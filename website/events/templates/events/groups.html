@@ -1,0 +1,23 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'events/groupstyle.css' %}"/>
+
+<div class="center">
+	<h1>Your groups</h1>
+</div>
+
+<div id="creategroupdiv">
+
+	<h2>Create a group</h2>
+	<div id="groupform">
+		<input type="text" id="grouptitle" name="grouptitle" maxlength="30"><br>
+		<div id="displayfriends">
+		</div>
+		<a href="/events/creategroup"><button id="creategroupbutton">Create group</button></a>
+	</div>
+</div>
+
+<div id="groupdisplay">
+	<div id="group">
+	</div>
+</div>

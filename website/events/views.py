@@ -50,3 +50,11 @@ def search(request):
 		return render(request, 'events/main.html', {'results': "No user by that name"})
 	else:
 		return render(request, 'events/main.html', {'results':search_results})
+
+def view_groups(request):
+	return render(request, 'events/groups.html')
+
+
+def logout(request):
+	del request.session['username']
+	return render(request, 'events/index.html')

@@ -1,0 +1,50 @@
+body {
+	background-color: #262e6d;
+}
+h1 {
+	color: white;
+}
+h2 {
+	text-align: center;
+	color: #262e6d;
+}
+.center {
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/*===========CREATE GROUP FORM ============ */
+
+#creategroupdiv {
+	width: 20%;
+	background-color: white;
+}
+
+#grouptitle {
+	margin-left: 20%;
+}
+
+
+#creategroupbutton {
+	margin-top: 3%;
+	margin-left: 5%;
+	font-size: 18px;
+	border-style: none;
+	width: 90%;
+	border-radius: 5px;
+	color: white;
+	background-color: #262e6d;
+}
+
+#groupform {
+	background-color: white;
+	width: 90%;
+	margin-left: 1%;
+}
+
+#groupdisplay {
+	background-color: white;
+	width: 70%;
+	border-radius: 5px;
+}

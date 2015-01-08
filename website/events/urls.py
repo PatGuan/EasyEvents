@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, url
-from events import views, eventview, friend
+from events import views, eventview, friend, group
 
 urlpatterns = patterns('',
 	url(r'^$', views.index, name='index'),
@@ -12,4 +12,7 @@ urlpatterns = patterns('',
 	url(r'^addFriend/(?P<requested_friend>\w+)/$', friend.addFriend, name='addFriend'),
 	url(r'^viewfriends/', friend.view_friends, name="viewfriends"),
 	url(r'^removeFriend/(?P<friend>\w+)/$', friend.remove_friend, name='removeFriend'),
+	url(r'^groups/', views.view_groups, name='view_groups'),
+	url(r'^logout/', views.logout, name="logout"),
+	url(r'^creategroup/<?P<group_title>\w+)/$', group.create_group, name="creategroup"),
 	)
