@@ -31,5 +31,6 @@ class Friends(models.Model):
 	friends = models.CharField(max_length=15)
 
 class Group(models.Model):
+	host = models.ForeignKey(User)
 	group_name = models.CharField(max_length=30)
 	group_members = models.CharField(max_length=20)

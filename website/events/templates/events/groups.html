@@ -10,10 +10,11 @@
 
 	<h2>Create a group</h2>
 	<div id="groupform">
-		<input type="text" id="grouptitle" name="grouptitle" maxlength="30"><br>
-		<div id="displayfriends">
-		</div>
-		<a href="/events/creategroup"><button id="creategroupbutton">Create group</button></a>
+		<form action="/events/creategroup/" method="post">
+			<input type="text" id="grouptitle" name="grouptitle" maxlength="30"><br>
+			{% csrf_token %}
+			<input id="creategroupbutton" type="submit" value="Create">
+		</form>
 	</div>
 </div>
 
@@ -21,3 +22,5 @@
 	<div id="group">
 	</div>
 </div>
+
+<h2> {{ result }} </h2>

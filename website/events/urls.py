@@ -14,5 +14,5 @@ urlpatterns = patterns('',
 	url(r'^removeFriend/(?P<friend>\w+)/$', friend.remove_friend, name='removeFriend'),
 	url(r'^groups/', views.view_groups, name='view_groups'),
 	url(r'^logout/', views.logout, name="logout"),
-	url(r'^creategroup/<?P<group_title>\w+)/$', group.create_group, name="creategroup"),
+	url(r'^creategroup/', group.create_group, name="create_group"),
 	)
